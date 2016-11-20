@@ -407,7 +407,9 @@ $(function(){
 			var downX = 0;
 			var nowIndex = 0;
 			var nextorprevIndex = 0;
-			
+			$(document).on('touchmove',function(ev){
+				ev.preventDefault();
+			});
 			$li1.on('touchstart',function(ev){
 				var touch = ev.originalEvent.changedTouches[0];
 				downX = touch.pageX;
