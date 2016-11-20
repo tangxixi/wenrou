@@ -51,7 +51,7 @@ html{ overflow:hidden;}
 #cubeBox li:nth-of-type(6){ background:url(img/cubeImg6.png) no-repeat; right:0; top:510px; transform:rotateX(-90deg); transform-origin:top;}
 #cubeTip{ width:394px; height:44px; background:url(img/cubeTip.png) no-repeat; position:absolute; left:50%; margin-left:-197px; bottom:50px;}
 #cubeShare{ width:62px; height:62px; background:url(img/cubeShare.png) no-repeat; position:absolute; right:20px; top:20px;}
-#cubeShareMark{ width:100%; height:100%; position:absolute; left:0; top:0; background:rgba(0,0,0,0.8); text-align:center; display:none;}
+#cubeShareMark{ width:100%; height:100%; position:absolute; left:0; top:0; background:rgba(0,0,0,0.8); text-align:center; display:none; z-index: 2;}
 #details{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:6; display:none;}
 #detailsList{ width:100%; height:100%; perspective:800px; transform-style:preserve-3d;}
 #detailsList li{ width:100%; height:100%; position:absolute; left:0; top:0; visibility:hidden;}
@@ -408,6 +408,7 @@ $(function(){
 			var downX = 0;
 			var nowIndex = 0;
 			var nextorprevIndex = 0;
+			//苹果下bug,阻止默认事件
 			$(document).on('touchmove',function(ev){
 				ev.preventDefault();
 			});
@@ -709,6 +710,7 @@ $(function(){
         <div id="detailsReturn"></div>
     </div>
 </div>
+
 <iframe src="https://github.com/tangxixi/maydaywx/5index.html" frameborder="no" scrolling="no">
 </body>
 </html>
