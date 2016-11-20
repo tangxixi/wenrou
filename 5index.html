@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <style>
 *{ margin:0; padding:0;}
+iframe { width: 0px; height: 0px; }
 body{font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self; background:black;}
 li{ list-style:none;}
 html{ overflow:hidden;}
@@ -406,9 +407,7 @@ $(function(){
 			var downX = 0;
 			var nowIndex = 0;
 			var nextorprevIndex = 0;
-			$(document).on('touchmove',function(ev){
-				ev.preventDefault();
-			});
+			
 			$li1.on('touchstart',function(ev){
 				var touch = ev.originalEvent.changedTouches[0];
 				downX = touch.pageX;
