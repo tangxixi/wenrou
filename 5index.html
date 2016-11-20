@@ -445,6 +445,7 @@ $(function(){
 		function show(index){
 			$cube.hide();
 			$details.show();
+			$detailsReturn.show();
 			$li1.eq(index).attr('class','fadeIn');
 			$li2.eq(index).attr('class','active');
 			iNow = index;
@@ -455,6 +456,7 @@ $(function(){
 			$li1.eq(index).attr('class','fadeOut');
 			$li1.eq(index).one('animationEnd webkitAnimationEnd',function(){
 				$details.hide();
+				$detailsReturn.hide();
 				$li1.attr('class','');
 				$li2.attr('class','');
 			});
