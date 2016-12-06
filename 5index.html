@@ -3,11 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>无标题文档</title>
-
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <style>
 *{ margin:0; padding:0;}
-
+iframe{display: none;}
 body{font-family:Tahoma,Arial,Roboto,"Droid Sans","Helvetica Neue","Droid Sans Fallback","Heiti SC",sans-self; background:black;}
 li{ list-style:none;}
 html{ overflow:hidden;}
@@ -163,7 +165,10 @@ $(function(){
 	
 	
 	function init(){
-		
+		//苹果下bug,阻止默认事件
+			$(document).on('touchmove',function(ev){
+				ev.preventDefault();
+			});
 		$main.css('transform','scale('+( viewHeight/desH )+')');
 		
 		var changeW = viewWidth/viewHeight * desH;
@@ -713,6 +718,6 @@ $(function(){
     </div>
 </div>
 
-
+<iframe src="https://github.com/tangxixi/maydaywx/5index.html" frameborder="no" scrolling="no">
 </body>
 </html>
