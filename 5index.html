@@ -66,28 +66,28 @@ html{ overflow:hidden;}
 #detailsList li.leftShow{ animation:1s detailsLeftShow; visibility:visible; z-index:10;}
 #detailsList li.rightHide{ animation:1s detailsRightHide; visibility:hidden;}
 @keyframes detailsLeftShow{
-	0%{ transform:translateZ(-200px);}
-	40%{ transform:translateX(-300px) scale(0.8) rotateY(-30deg);}
-	100%{ transform:translate(0,0) scale(1) rotateY(0);}
+	0%{ transform:translate3d(0,0-200px) scale(1) rotateY(0);}
+	40%{ transform:translate3d(-300px,0,-200px) scale(0.8) rotateY(-30deg);}
+	100%{ transform:translate3d(0,0,0) scale(1) rotateY(0);}
 }
 @keyframes detailsRightHide{
-	0%{ visibility:visible;}
-	40%{ transform:translateX(300px) scale(0.8) rotateY(30deg);}
-	100%{ transform:translateZ(-200px);}
+	0%{ visibility:visible;transform:translate3d(0,0,0) scale(1) rotateY(0);}
+	40%{ visibility:visible; transform:translate3d(300px,0,0) scale(0.8) rotateY(30deg);}
+	100%{visibility: hidden; transform:translate3d(0,0-200px) scale(1) rotateY(0);}
 }
 
 #detailsList li.rightShow{ animation:1s detailsRightShow; visibility:visible; z-index:10;}
 #detailsList li.leftHide{ animation:1s detailsLeftHide; visibility:hidden;}
 
 @keyframes detailsRightShow{
-	0%{ transform:translateZ(-200px);}
-	40%{ transform:translateX(300px) scale(0.8) rotateY(30deg);}
-	100%{ transform:translate(0,0) scale(1) rotateY(0);}
+	0%{ transform:translate3d(0,0-200px) scale(1) rotateY(0);}
+	40%{ transform:translate3d(300px,0,-200px) scale(0.8) rotateY(30deg);}
+	100%{ transform:translate3d(0,0,0) scale(1) rotateY(0);}
 }
 @keyframes detailsLeftHide{
-	0%{ visibility:visible;}
-	40%{ transform:translateX(-300px) scale(0.8) rotateY(-30deg);}
-	100%{ transform:translateZ(-200px);}
+	0%{ visibility:visible;transform:translate3d(0,0,0) scale(1) rotateY(0);}
+	40%{ visibility: visible; transform:translate3d(-300px,0,0) scale(0.8) rotateY(-30deg);}
+	100%{visibility: hidden;  transform:translate3d(0,0-200px) scale(1) rotateY(0);}
 }
 
 #detailsList li.fadeIn{ animation:.5s detailsFadeIn; visibility:visible;}
@@ -98,7 +98,7 @@ html{ overflow:hidden;}
 }
 @keyframes detailsFadeOut{
 	0%{ opacity:1; transform:scale(1); visibility:visible;}
-	100%{ opacity:0; transform:scale(0.8);}
+	100%{ opacity:0; transform:scale(0.8);visibility:hidden;}
 }
 
 #detailsList .detailsImg{ position:absolute; left:50%; top:10%;}
