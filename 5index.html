@@ -459,7 +459,7 @@ $(function(){
 			$cube.show();
 			$li1.eq(index).attr('class','fadeOut');
 			alert(22222);
-			$li1.eq(index).one('animationend webkitAnimationEnd',function(){
+			$li1.eq(index).on('animationend webkitAnimationEnd',function(){
 				alert(1111);
 				$details.hide();
 				$detailsReturn.hide();
