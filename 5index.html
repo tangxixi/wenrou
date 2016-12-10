@@ -85,9 +85,9 @@ html{ overflow:hidden;}
 	100%{ transform:translate3d(0,0,0) scale(1) rotateY(0);}
 }
 @keyframes detailsLeftHide{
-	0%{ visibility:visible;transform:translate3d(0,0,0) scale(1) rotateY(0);}
+	0%{ visibility:visible;translate3d(0,0,0) scale(1) rotateY(0);}
 	40%{ visibility: visible; transform:translate3d(-300px,0,0) scale(0.8) rotateY(-30deg);}
-	100%{visibility: hidden;  transform:translate3d(0,0-200px) scale(1) rotateY(0);}
+	100%{ transform:translate3d(0,0-200px) scale(1) rotateY(0);}
 }
 
 #detailsList li.fadeIn{ animation:.5s detailsFadeIn; visibility:visible;}
