@@ -458,7 +458,9 @@ $(function(){
 		function hide(index){
 			$cube.show();
 			$li1.eq(index).attr('class','fadeOut');
+			alert(22222);
 			$li1.eq(index).one('animationend webkitAnimationEnd',function(){
+				alert(1111);
 				$details.hide();
 				$detailsReturn.hide();
 				$li1.attr('class','');
