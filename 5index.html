@@ -165,10 +165,7 @@ $(function(){
 	
 	
 	function init(){
-		//苹果下bug,阻止默认事件
-			$(document).on('touchmove',function(ev){
-				ev.preventDefault();
-			});
+		
 		$main.css('transform','scale('+( viewHeight/desH )+')');
 		
 		var changeW = viewWidth/viewHeight * desH;
@@ -415,7 +412,10 @@ $(function(){
 			var downX = 0;
 			var nowIndex = 0;
 			var nextorprevIndex = 0;
-			
+			//苹果下bug,阻止默认事件
+			$(document).on('touchmove',function(ev){
+				ev.preventDefault();
+			});
 			$li1.on('touchstart',function(ev){
 				var touch = ev.originalEvent.changedTouches[0];
 				downX = touch.pageX;
