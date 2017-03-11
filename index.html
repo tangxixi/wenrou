@@ -41,8 +41,8 @@ html{ overflow:hidden;}
 #messageList li.sty1 .arrow{ left:-10px; background:url(img/messageArrow1.png) no-repeat;}
 #messageList li.sty2 .arrow{ right:-10px; background:url(img/messageArrow2.png) no-repeat;}
 #messageText{ width:640px; height:88px; background:url(img/messageText.png) no-repeat; position:absolute; bottom:0; transform-origin:bottom;}
-#cube{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:6; background:url(img/cubeBg.jpg) no-repeat; background-size:cover; perspective:800px;}
-#cubeBox{ width:510px; height:510px; transform-style:preserve-3d; position:absolute; left:50%; top:20%; margin-left:-260px; transform: scale(0) rotateX(-45deg) rotateY(-180deg); transform-origin:255px 255px -255px; z-index: 2;}
+#cube{ width:100%; height:100%; position:absolute; left:0; top:0; z-index:6; background:url(img/cubeBg.jpg) no-repeat; background-size:cover; perspective:800px; -webkit-perspective:800px;}
+#cubeBox{ width:510px; height:510px; transform-style:preserve-3d;-webkit-transform-style:preserve-3d; position:absolute; left:50%; top:20%; margin-left:-260px; transform: scale(0) rotateX(-45deg) rotateY(-180deg); transform-origin:255px 255px -255px; z-index: 2;}
 #cubeBox li{ width:510px; height:510px; position:absolute;}
 #cubeBox li:nth-of-type(1){ background:url(img/cubeImg1.png) no-repeat; left:0; top:0;}
 #cubeBox li:nth-of-type(2){ background:url(img/cubeImg2.png) no-repeat; left:510px; top:0; transform:rotateY(90deg); transform-origin:left;}
@@ -316,7 +316,7 @@ $(function(){
 		
 		function closeMessage(){
 			$message.css('transform','translate(0,'+(desH)+'px)');
-			$message.on('transitionEnd webkitTransitionEnd',function(){
+			$message.on('transitionend webkitTransitionEnd',function(){
 				$(this).remove();
 				cube.init();
 			});
@@ -458,7 +458,7 @@ $(function(){
 		function hide(index){
 			$cube.show();
 			$li1.eq(index).attr('class','fadeOut');
-			$li1.eq(index).one('animationEnd webkitAnimationEnd',function(){
+			$li1.eq(index).one('animationend webkitAnimationEnd',function(){
 				$details.hide();
 				$detailsReturn.hide();
 				$li1.attr('class','');
@@ -594,22 +594,22 @@ $(function(){
             <li class="sty1">
             	<div class="arrow"></div>
             	<img src="img/messageHead1.png">
-                 你是五迷吗？为什么喜欢五月天啊～ ^_^
+                 为什么喜欢五月天啊～ ^_^
             </li>
             <li class="sty2">
             	<div class="arrow"></div>
             	<img src="img/messageHead2.png">
-               因为有首歌叫温柔，走在风中今天阳光真的好温柔
+               有首歌叫温柔，走在风中今天阳光真的好温柔
             </li>
             <li class="sty1">
             	<div class="arrow"></div>
             	<img src="img/messageHead1.png">
-            	不过五月天很多歌都被唱烂了啊
+            	那五月天有哪些好听的歌呢？
             </li>
             <li class="sty2">
             	<div class="arrow"></div>
             	<img src="img/messageHead2.png">
-                那是因为你只听过温柔、倔强、知足、突然好想你......
+                你可能听过温柔、倔强、知足、突然好想你......
             </li>
             <li class="sty2">
             	<div class="arrow"></div>
@@ -719,6 +719,6 @@ $(function(){
     </div>
 </div>
 
-<!--<iframe src="https://github.com/tangxixi/maydaywx/5index.html" frameborder="no" scrolling="no"> -->
+<!--<iframe src="https://github.com/tangxixi/maydaywx/5index.html" frameborder="no" scrolling="no">-->
 </body>
 </html>
