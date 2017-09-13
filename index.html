@@ -204,7 +204,7 @@ $(function(){
 				});
 			};
 		});
-		$('.loadingProgressBar').on('transitionEnd webkitTransitionEnd',function(){					
+		$('.loadingProgressBar').on('transitionend webkitTransitionEnd',function(){					
 			if(iNow == arr.length){
 				$('#loading').animate({opacity:0},function(){
 					$(this).remove();
@@ -251,7 +251,7 @@ $(function(){
 		function closePhone(){
 			oSay.pause();
 			$phone.css('transform','translate(0,'+(desH)+'px)');
-			$phone.on('transitionEnd webkitTransitionEnd',function(){
+			$phone.on('transitionend webkitTransitionEnd',function(){
 				$(this).remove();
 				message.init();
 			});
@@ -341,7 +341,7 @@ $(function(){
 		function init(){
 			$cubeBox.css('transform','scale(0.7) rotateX('+startX+'deg) rotateY('+startY+'deg)');
 			$cubeBox.css('transition','1s');
-			$cubeBox.on('transitionEnd webkitTransitionEnd',function(){
+			$cubeBox.on('transitionend webkitTransitionEnd',function(){
 				$cubeBox.css('transition','');
 			});
 			bind();	
@@ -465,9 +465,9 @@ $(function(){
 				$li2.attr('class','');
 			});
 		}
-		function bindCanvas(index){
 			var $img = $detailsImg.eq(index).find('img');
 			var oC = $detailsImg.eq(index).find('canvas').get(0);
+		function bindCanvas(index){
 			var oGC = oC.getContext('2d');
 			var objImg = new Image();
 			objImg.src = $img.attr('src');
@@ -564,9 +564,9 @@ $(function(){
         </div>
     </div>
 	<div id="sound">
-    	<audio id="bell" src="img/bell.mp3" autoplay="autoplay" autoplay="autoplay" preload="auto" loop></audio>
-        <audio id="say" src="img/say.mp3" autoplay="autoplay" preload="auto"></audio>
-        <audio id="music" src="img/music.mp3" autoplay="autoplay" preload="auto" loop></audio>
+    	<audio id="bell" src="img/bell.mp3" preload="auto" loop></audio>
+        <audio id="say" src="img/say.mp3" preload="auto"></audio>
+        <audio id="music" src="img/music.mp3" preload="auto" loop></audio>
     </div>
 	<div id="phone">
     	<div id="phoneHead">	
